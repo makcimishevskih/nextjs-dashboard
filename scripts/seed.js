@@ -7,6 +7,11 @@ const {
 } = require('../app/lib/placeholder-data.js');
 const bcrypt = require('bcrypt');
 
+// SELECT invoices.amount, customers.name
+// FROM invoices
+// JOIN customers ON invoices.customer_id = customers.id
+// WHERE invoices.amount = 666;
+
 async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
